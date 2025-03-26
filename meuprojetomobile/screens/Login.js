@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, Image, TextInput } from 'react-native';
 import { Button } from 'react-native-web';
-
+import { useNavigation } from '@react-navigation/native';
 function Login() {
     return (
         <View style={styles.animais}>
@@ -13,6 +13,7 @@ function Login() {
 }
 
 export default function login() {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <Text style={styles.texto1}>Tela de login PetShop</Text>
@@ -36,6 +37,7 @@ export default function login() {
                 <Button 
                 title='logar' 
                 color="#000000"
+                onPress={() => navigation.navigate('Home')}
                 />
                 </View>
 

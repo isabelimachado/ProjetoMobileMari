@@ -6,7 +6,7 @@ import Home from './screens/Home'
 import Login from './screens/Login'
 
 
-export default function App() {
+export default function Drawer() {
   const Drawer = createDrawerNavigator();
   return (
      <NavigationContainer>
