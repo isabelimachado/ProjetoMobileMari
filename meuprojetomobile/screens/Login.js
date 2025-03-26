@@ -6,6 +6,8 @@ function Login() {
         <View style={styles.animais}>
             <text>Login</text>
             <TextInput style={styles.input} placeholder='none'></TextInput>
+            <TextInput style={styles.input} placeholder='none'></TextInput>
+
         </View>
     );
 }
@@ -16,17 +18,20 @@ export default function login() {
             <Text style={styles.texto1}>Tela de login PetShop</Text>
             <Text style={styles.texto1}></Text>
             <Text style={styles.texto2}>NOME</Text>
-            <TextInput
-                style={styles.input}
-                placeholder=''
-            />
-
+            <View>
+                <TextInput
+                    style={styles.input}
+                    placeholder=''
+                />
+            </View>
             <View style={styles.seila}>
+            
                 <Text style={styles.texto2}>SENHA</Text>
                 <TextInput
                     style={styles.input}
                     placeholder=''
                 />
+
                 <View style={styles.botao}>
                 <Button 
                 title='logar' 
@@ -51,7 +56,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Cursive',
         textAlign: 'center',
         fontSize: 30,
-        top: 95,
+        top: 90,
     },
 
     botao: {
