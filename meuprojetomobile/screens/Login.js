@@ -1,6 +1,8 @@
 import { Text, View, StyleSheet, Image, TextInput } from 'react-native';
 import { Button } from 'react-native-web';
 import { useNavigation } from '@react-navigation/native';
+// import AntDesign from '@expo/vector-icons/AntDesign';
+
 function Login() {
     return (
         <View style={styles.animais}>
@@ -16,22 +18,24 @@ export default function login() {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
+            
             <Text style={styles.texto1}>Tela de login PetShop</Text>
-            <Text style={styles.texto1}></Text>
+            {/* <AntDesign name="login" size={50} color="black"/> */}
             <Text style={styles.texto2}>NOME</Text>
+            
             <View>
                 <TextInput
                     style={styles.input}
                     placeholder=''
                 />
             </View>
-            <View style={styles.seila}>
-            
+                <View style={styles.caixa}>
                 <Text style={styles.texto2}>SENHA</Text>
                 <TextInput
                     style={styles.input}
                     placeholder=''
                 />
+                </View>
 
                 <View style={styles.botao}>
                 <Button 
@@ -41,7 +45,6 @@ export default function login() {
                 />
                 </View>
 
-            </View>
         </View>
     );
 }
@@ -62,8 +65,9 @@ const styles = StyleSheet.create({
     },
 
     botao: {
-        borderRadius: 30,
         width:150,
+        height:150,
+        bottom:50,
         left:130,
     },
 
@@ -73,6 +77,10 @@ const styles = StyleSheet.create({
         fontSize: 30,
         right: 130,
         top: 300,
+    },
+
+    caixa:{
+        bottom:300
     },
 
     input: {

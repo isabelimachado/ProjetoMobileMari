@@ -10,9 +10,23 @@ export default function App() {
   const Drawer = createDrawerNavigator();
   return (
      <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name = 'Login' component={Login}/>
-        <Drawer.Screen name = 'Home' component={Home}/>
+      <Drawer.Navigator
+        screenOptions={{
+          drawerStyle: {
+            backgroundColor: '#f0f0f0', 
+            width: 250, 
+          },
+          drawerActiveBackgroundColor: '#DB7593', 
+          drawerActiveTintColor: '#fff', 
+          drawerInactiveTintColor: '#000',
+          headerStyle: {
+            backgroundColor: '#E486A2',
+          },
+          headerTintColor: '#fff',
+        }}
+      >
+        <Drawer.Screen name="Login" component={Login}/>
+        <Drawer.Screen name="Home" component={Home} />
       </Drawer.Navigator>
      </NavigationContainer>
   );
