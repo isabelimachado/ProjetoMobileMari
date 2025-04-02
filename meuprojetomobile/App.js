@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import Home from './screens/Home'
 import Login from './screens/Login'
 import Feed from './screens/Feed';
+import Counter from './screens/Counter';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Entypo from '@expo/vector-icons/Entypo';
@@ -49,6 +51,14 @@ function hometabs(){
       options={{
         tabBarIcon: () => (
           <MaterialIcons name = "feed" size={30} color= '#E486A2'/>
+        )
+      }}
+    />
+
+    <bottom.Screen name='Counter' component={Counter} 
+      options={{
+        tabBarIcon: () => (
+          <MaterialCommunityIcons name = "counter" size={30} color= '#E486A2'/>
         )
       }}
     />
