@@ -32,12 +32,12 @@ export default function Home() {
     return (
         <View style={styles.container}>
             <ImageBackground style={{flex:1,width:'100%', height:'100%'}} source ={imagemdefundo}>
-            <Text style={styles.texto1}>PetShop Da Isa 🩷</Text>
+            <Text style={styles.texto1}><b>PetShop Da Isa 🩷</b></Text>
             <Text style={styles.texto1}></Text>
             <Animais/>
-            <Text style={styles.texto2}>Nossos Clientes :) </Text>
+            <Text style={styles.texto2}><b>Nossos Clientes :) </b></Text>
             <Animais2/>
-            <Text style={styles.creditos}>Feito por Isabeli Machado</Text>
+            <Text style={styles.creditos}><b>Feito por Isabeli Machado</b></Text>
             </ImageBackground>
         </View>
     );
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     },
     
     creditos: {
-      fontFamily:'Cursive',
+      fontFamily: 'Arial Narrow',
       textAlign: 'center',
       fontSize: 30,
       top: 250,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     },
     
     texto1: {
-      fontFamily:'Cursive',
+        fontFamily: 'Arial Narrow',
       textAlign: 'center',
       fontSize: 30,
       top: 95,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     },
   
     texto2: {
-      fontFamily:'Cursive',
+        fontFamily: 'Arial Narrow',
       textAlign: 'center',
       fontSize: 30,
       top: 150,

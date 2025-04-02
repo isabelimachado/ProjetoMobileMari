@@ -19,29 +19,29 @@ export default function login() {
     return (
         <View style={styles.container}>
             
-            <Text style={styles.texto1}>Tela de login PetShop</Text>
+            <Text style={styles.texto1}><b>Tela de login PetShop</b></Text>
             {/* <AntDesign name="login" size={50} color="black"/> */}
             <Text style={styles.texto2}>NOME</Text>
             
             <View>
                 <TextInput
-                    style={styles.input}
                     placeholder=''
+                    style={styles.input}
                 />
             </View>
                 <View style={styles.caixa}>
                 <Text style={styles.texto2}>SENHA</Text>
                 <TextInput
-                    style={styles.input}
                     placeholder=''
+                    style={styles.input}
                 />
                 </View>
 
                 <View style={styles.botao}>
                 <Button 
                 title='logar' 
-                color="#000000"
-                onPress={() => navigation.navigate('Home')}
+                color="#ff69b4"
+                onPress={() => navigation.navigate('hometabs')}
                 />
                 </View>
 
@@ -58,21 +58,22 @@ const styles = StyleSheet.create({
 
 
     texto1: {
-        fontFamily: 'Cursive',
+        fontFamily: 'Arial Narrow',
         textAlign: 'center',
         fontSize: 30,
-        top: 90,
+        top: 150,
     },
 
     botao: {
         width:150,
         height:150,
-        bottom:50,
+        bottom:90,
         left:130,
+
     },
 
     texto2: {
-        fontFamily: 'Cursive',
+        fontFamily: 'Arial Narrow',
         textAlign: 'center',
         fontSize: 30,
         right: 130,
@@ -87,6 +88,7 @@ const styles = StyleSheet.create({
         height: 40,
         margin: 12,
         borderWidth: 1,
+        borderRadius:15,
         padding: 10,
         textAlign: 'center',
         fontSize: 30,
