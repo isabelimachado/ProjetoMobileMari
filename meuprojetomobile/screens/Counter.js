@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, Image,Button, TouchableOpacity } from 'react-native'; 
-import { ImageBackground, ScrollView } from 'react-native-web';
+import { ImageBackground, ScrollView, TextInput } from 'react-native-web';
 import { useState } from 'react';
 
 export default function Counter(){
@@ -21,6 +21,7 @@ export default function Counter(){
             <br></br><br></br>
             <Text style={styles.texto}>Contador: {contador}</Text>
 
+
             <View style={styles.botoes}>
                 <TouchableOpacity
                 style={{backgroundColor:'#ff7dbe',borderWidth:0.5,borderRadius:20,width:80,height:50,textAlign:'center',margin:'auto',fontSize:30,color:'#fffafc',borderColor:'#ff7dbe'}}
@@ -37,6 +38,18 @@ export default function Counter(){
                 onPress={Diminuir}
                 >-
                 </TouchableOpacity>
+            </View>
+
+            <View style={styles.viewinput}>
+            <TextInput
+                placeholder='Nome'
+                style={styles.input}
+            />
+
+            <TextInput
+                placeholder='Email'
+                style={styles.input}
+            />
             </View>
         </View>
     )
@@ -75,6 +88,17 @@ const styles = StyleSheet.create({
         fontSize:24,
         textAlign: 'center'
     },
+
+    viewinput:{
+        textAlign: 'center',
+        // backgroundColor:'orange',
+        height:'20%',
+        justifyContent: 'space-around'
+    },
+
+    input:{
+        fontSize:20,
+    }
 
 
 }) 
