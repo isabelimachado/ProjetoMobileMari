@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { View, Text, StyleSheet,FlatList,Image} from "react-native-web";
-
+import Card from '../components/Card'
 
 export default function Produtos(){
     const [produto,setproduto] = useState([
@@ -19,10 +19,15 @@ export default function Produtos(){
             <FlatList showsVerticalScrollIndicator={false}
                 data = {produto}
                 renderItem={({item}) => (
-                <View style={styles.card}>
-                    <Image style={{height:300,width:300,borderRadius:10}} source={{uri: item.img}}></Image>
+                <View>
+                    {/* <Image style={{height:300,width:300,borderRadius:10}} source={{uri: item.img}}></Image>
                     <Text style={styles.texto}>{item.nome}</Text>
-                    <Text style={styles.texto}>R$ {item.valor}</Text>
+                    <Text style={styles.texto}>R$ {item.valor}</Text> */}
+                    <Card
+                        nome={item.nome}
+                        valor={item.valor}
+                        img={item.img}
+                    />
                 </View>
                 )}
                 keyExtractor={item => item.id}
@@ -54,23 +59,23 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
 
-    card:{
-        padding:10,
-        margin:10,
-        backgroundColor:"#ef6f82",
-        borderRadius: 8,
-        alignItems: "center",
-        shadowColor: '#000',
-        shadowOpacity: 0.2,
-        shadowRadius: 50,
-    },
+    // card:{
+    //     padding:10,
+    //     margin:10,
+    //     backgroundColor:"#ef6f82",
+    //     borderRadius: 8,
+    //     alignItems: "center",
+    //     shadowColor: '#000',
+    //     shadowOpacity: 0.2,
+    //     shadowRadius: 50,
+    // },
 
-    texto:{
-        fontFamily: 'Arial Narrow',
-        fontSize:30,
-        color: "black",
-        textAlign: 'center'
-    },
+    // texto:{
+    //     fontFamily: 'Arial Narrow',
+    //     fontSize:30,
+    //     color: "black",
+    //     textAlign: 'center'
+    // },
 
 
 })
