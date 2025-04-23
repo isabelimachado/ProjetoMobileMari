@@ -1,25 +1,22 @@
 
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native'; //importando navigation container -> conter as telas da navegação 
 import Home from './screens/Home'
 import Login from './screens/Login'
-import Feed from './screens/Feed';
-import Counter from './screens/Counter';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-
+import Feed from './screens/Feed'; //importando as telas
+import Counter from './screens/Counter'; //import default: importa td dentro de uma biblioteca/componente
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'; //simbolos no bottom do site EXPO ICONS
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import Entypo from '@expo/vector-icons/Entypo';
 
 import { createStackNavigator  } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ScrollView } from 'react-native-web';
-
+//importar as navegações stack e bottom
 function hometabs(){
-  const bottom = createBottomTabNavigator();
+  const Bottom = createBottomTabNavigator(); //criar uma função para conter todas as telas que vao aparecer dps do login
 
   return(
     
-    <bottom.Navigator
+    <Bottom.Navigator
     screenOptions={{
       animation:'fade',
       bottomStyle: {
@@ -37,45 +34,45 @@ function hometabs(){
       tabBarActiveTintColor:'#000',
       tabBarActiveBackgroundColor:'#f0f0f9'          
 
-    }}
+    }} //tipo os styles do bottom
   >
   
-    <bottom.Screen name="Home" component={Home}
+    <Bottom.Screen name="Home" component={Home} //chama a função que vai pra home la que foi importada
     options={{
         tabBarIcon: () => (
           <MaterialIcons name = "home" size={30} color= '#E486A2'/>
-        )
+        ) //o icon do home
       }} 
     />
-    <bottom.Screen name='Feed' component={Feed} 
+    <Bottom.Screen name='Feed' component={Feed} 
       options={{
         tabBarIcon: () => (
           <MaterialIcons name = "feed" size={30} color= '#E486A2'/>
-        )
+        ) //msm coisa com as demais
       }}
     />
 
-    <bottom.Screen name='Counter' component={Counter} 
+    <Bottom.Screen name='Counter' component={Counter} 
       options={{
         tabBarIcon: () => (
           <MaterialCommunityIcons name = "counter" size={30} color= '#E486A2'/>
         )
       }}
     />
-  </bottom.Navigator>
+  </Bottom.Navigator>
   )
 
 }
-const stack = createStackNavigator();
+const Stack = createStackNavigator(); //criando a navegação Stack com  uma constante
 
 export default function App() {
-  return (
-     <NavigationContainer>
-        <stack.Navigator>
-          <stack.Screen options={{headerShown:false}} name='login' component={Login}/>
-          <stack.Screen options={{headerShown:false}} name ='hometabs' component={hometabs}/>
-        </stack.Navigator>
-     </NavigationContainer>
+  return ( //vai retornar a navegação stack, primeiro o login com o componente e dps o hometabs que eh os bottoms
+     <NavigationContainer> 
+        <Stack.Navigator> 
+          <Stack.Screen options={{headerShown:false}} name='login' component={Login}/>
+          <Stack.Screen options={{headerShown:false}} name ='hometabs' component={hometabs}/>
+        </Stack.Navigator> 
+     </NavigationContainer> //stack. ... (navegação ou tela)
   );
 
 }

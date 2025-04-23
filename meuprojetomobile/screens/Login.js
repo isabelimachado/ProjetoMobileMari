@@ -6,21 +6,18 @@ import { useNavigation } from '@react-navigation/native';
 function Login() {
     return (
         <View style={styles.animais}>
-            <text>Login</text>
+        <Text>Login</Text>
             <TextInput style={styles.input} placeholder='none'></TextInput>
             <TextInput style={styles.input} placeholder='none'></TextInput>
-
         </View>
     );
 }
-
-export default function login() {
-    const navigation = useNavigation();
+//precisa do navigation como propriedade
+export default function login({navigation}) {
     return (
         <View style={styles.container}>
             
             <Text style={styles.texto1}><b>Tela de login PetShop</b></Text>
-            {/* <AntDesign name="login" size={50} color="black"/> */}
             <Text style={styles.texto2}>NOME</Text>
             
             <View>
@@ -41,7 +38,7 @@ export default function login() {
                 <Button 
                 title='logar' 
                 color="#ff69b4"
-                onPress={() => navigation.navigate('hometabs')}
+                onPress={() => navigation.navigate('hometabs')} 
                 />
                 </View>
 
@@ -49,7 +46,7 @@ export default function login() {
     );
 }
 
-
+//hometabs -> função/componente
 const styles = StyleSheet.create({
     container: {
         flex: 1,
