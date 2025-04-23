@@ -1,5 +1,5 @@
-import { Text, View, StyleSheet, Image,Button, TouchableOpacity } from 'react-native'; //importando componentes nativos do react
-import { ImageBackground, ScrollView, TextInput } from 'react-native-web'; //importando componentes nativos do react web
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'; //importando componentes nativos do react
+import {TextInput } from 'react-native-web'; //importando componentes nativos do react web
 import { useState } from 'react'; //usestate: valor inicial da variavel
 //importação nomeada: {} -> importando algo especifico da biblioteca
 
@@ -59,7 +59,7 @@ export default function Counter(){
                 onChangeText={SetEmail}
             />
             </View>
-            <Text style={{bottom:150,fontSize:30,textAlign:'center'}}>Oi {Nome}, seu email é {Email}</Text>
+            <Text style={{bottom:150,fontSize:30,textAlign:'center',fontFamily: 'Arial Narrow',}}>Oi {Nome}, seu email é {Email}</Text>
         </View>
     )
 }
@@ -85,6 +85,8 @@ const styles = StyleSheet.create({
     title:{
         fontSize: 40,
         color: "#000",
+        fontFamily: 'Arial Narrow',
+
     },
 
     imagem:{
@@ -95,14 +97,19 @@ const styles = StyleSheet.create({
 
     texto:{
         fontSize:24,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'Arial Narrow',
+
     },
 
     viewinput:{
         textAlign: 'center',
         // backgroundColor:'orange',
         height:'20%',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        fontFamily: 'Arial Narrow',
+
+
     },
 
     input:{

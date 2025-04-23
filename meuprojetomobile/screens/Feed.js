@@ -1,5 +1,4 @@
 import { Text, View, StyleSheet, Image,Button } from 'react-native'; 
-import { ImageBackground, ScrollView } from 'react-native-web';
 
 export default function Feed(){
     return(
@@ -17,6 +16,7 @@ export default function Feed(){
 
             <Button
             title='Saiba Mais'
+            fontFamily='Arial Narrow'
             color={'#ff69b4'}
             />
         </View>
@@ -43,6 +43,10 @@ const styles = StyleSheet.create({
 
     texto:{
         fontSize:24,
-        textAlign: 'center'
+        fontFamily: 'Arial Narrow',
+        fontWeight:30,
+        justifyContent:'center',
+        textAlign:'center'
+
     }
 }) 

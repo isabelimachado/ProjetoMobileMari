@@ -1,6 +1,5 @@
-import { Text, View, StyleSheet, Image, TextInput } from 'react-native';
+import { Text, View, StyleSheet, TextInput } from 'react-native';
 import { Button } from 'react-native-web';
-import { useNavigation } from '@react-navigation/native';
 // import AntDesign from '@expo/vector-icons/AntDesign';
 
 function Login() {

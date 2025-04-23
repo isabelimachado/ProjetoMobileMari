@@ -10,6 +10,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 import { createStackNavigator  } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Produtos from './screens/Produtos';
 //importar as navegações stack e bottom
 function hometabs(){
   const Bottom = createBottomTabNavigator(); //criar uma função para conter todas as telas que vao aparecer dps do login
@@ -58,6 +59,13 @@ function hometabs(){
           <MaterialCommunityIcons name = "counter" size={30} color= '#E486A2'/>
         )
       }}
+    />
+    <Bottom.Screen name='Produtos' component={Produtos}
+    options={{
+      tabBarIcon: () => (
+          <MaterialIcons name="production-quantity-limits" size={30} color= '#E486A2' />      
+        )
+    }}
     />
   </Bottom.Navigator>
   )

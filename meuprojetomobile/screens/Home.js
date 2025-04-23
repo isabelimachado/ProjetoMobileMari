@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     },
     
     texto1: {
-        fontFamily: 'Arial Narrow',
+      fontFamily: 'Arial Narrow',
       textAlign: 'center',
       fontSize: 30,
       top: 95,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     },
   
     texto2: {
-        fontFamily: 'Arial Narrow',
+      fontFamily: 'Arial Narrow',
       textAlign: 'center',
       fontSize: 30,
       top: 150,
