@@ -15,7 +15,7 @@ export default function Card({ nome, valor, img }) {
 const styles = StyleSheet.create({
     card: {
         flexDirection: "row",
-        padding: 10,
+        padding: 20,
         margin: 10,
         backgroundColor: "#ef6f82",
         borderRadius: 8,
@@ -25,16 +25,17 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     imagem: {
-        height: 100,
-        width: 100,
+        height: 120,
+        width: 120,
         borderRadius: 10,
-        marginRight: 10,
+        marginRight: 30,
     },
 
     texto: {
         fontFamily: 'Arial',
-        fontSize: 20,
+        fontSize: 25,
         color: "black",
-        flexWrap: 'wrap',
+        right: 20,
+        flexWrap: 'wrap'
     },
 });

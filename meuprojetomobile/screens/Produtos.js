@@ -6,8 +6,8 @@ export default function Produtos(){
     const [produto,setproduto] = useState([
         {id:1, nome: 'Ração de gato filhote', valor: 50.99,img: 'https://down-br.img.susercontent.com/file/br-11134207-7qukw-lgcl63vzwxof58'},
         {id:2, nome: 'Arranhador de gato', valor: 130.00,img: 'https://th.bing.com/th/id/OIP.xof0ct10wgjcgZ8-oZJglAHaF3?rs=1&pid=ImgDetMain'},
-        {id:3, nome: 'Rémedio pulga de cachorro', valor: 25.00,img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDQv4sHF85JOrWz2NieYmIzKJDwgLWDDE6fg&s'},
-        {id:3, nome: 'Roupa de cachorro salsicha', valor: 90.99, img: 'https://fotos.amomeupet.org/uploads/fotos/1640183798_61c337f6689ae_hd.jpeg'}
+        {id:3, nome: 'Rémedio de cachorro', valor: 25.00,img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDQv4sHF85JOrWz2NieYmIzKJDwgLWDDE6fg&s'},
+        {id:3, nome: 'Roupa de salsicha', valor: 90.99, img: 'https://fotos.amomeupet.org/uploads/fotos/1640183798_61c337f6689ae_hd.jpeg'}
 
     ])
     
