@@ -1,15 +1,24 @@
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
-// import AntDesign from '@expo/vector-icons/AntDesign';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import {auth} from "../Controller";
+import { useState } from 'react';
 
-function Login() {
-    return (
-        <View style={styles.animais}>
-        <Text>Login</Text>
-        </View>
-    );
-}
+
 //precisa do navigation como propriedade
-export default function login({navigation}) {
+export default function Login({navigation}) {
+    const [email, setemail] = useState("");
+    const [senha, setSenha] = useState("");
+
+    const VerificarUser = () => {
+        signInWithEmailAndPassword(auth, email, senha).then(userCredential => {
+            console.log("usuario logado", userCredential.user.email)
+            navigation.navigate('hometabs');
+        })
+        .catch((error) => {
+            console.log('erro ao logar', error.message);
+        });
+    }
+
     return (
         <View style={styles.container}>
             
@@ -20,6 +29,8 @@ export default function login({navigation}) {
                 <TextInput
                     placeholder='Email'
                     style={styles.input}
+                    onChangeText={setemail}
+
                 />
             </View>
 
@@ -29,12 +40,13 @@ export default function login({navigation}) {
                     placeholder='Senha'
                     style={styles.input}
                     secureTextEntry={true}
+                    onChangeText={setSenha}
 
                 />
             </View>
 
             <View style={styles.botao}>
-                <TouchableOpacity onPress={() => navigation.navigate('hometabs')} color="#ff69c4" >
+                <TouchableOpacity onPress={VerificarUser} color="#ff69c4" >
                 <Text>logar</Text>
                 </TouchableOpacity>
             </View>

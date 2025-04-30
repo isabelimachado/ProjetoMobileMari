@@ -3,13 +3,7 @@ import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import {auth} from "../Controller";
 
-function cadastro() {
-    return (
-        <View style={styles.animais}>
-        <Text>CADASTRO</Text>
-        </View>
-    );
-}
+
 //precisa do navigation como propriedade
 export default function Cadastro({navigation}) {
     const [email, setemail] = useState("");
@@ -46,6 +40,10 @@ export default function Cadastro({navigation}) {
     
             <TouchableOpacity style={styles.botao} onPress={cadastroUser}>
                 <Text style={styles.textoBotao}>Cadastrar</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.botao}  onPress={() => navigation.navigate('login')} color="#ff69c4" >
+                <Text style={styles.textoBotao}>Voltar ao login</Text>
             </TouchableOpacity>
         </View>
     );
