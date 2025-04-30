@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import {auth} from "../Controller";
 
 function cadastro() {
@@ -21,11 +22,9 @@ export default function Cadastro({navigation}) {
           })
           .catch((error) => {
             console.log("erro", error.message);           
-            // ..
           });
     }
 
-    
     return (
         <View style={styles.container}>
             <Text style={styles.titulo}>Tela de Cadastro PetShop</Text>
@@ -45,7 +44,7 @@ export default function Cadastro({navigation}) {
                 secureTextEntry={true}
             />
     
-            <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate(cadastroUser)}>
+            <TouchableOpacity style={styles.botao} onPress={cadastroUser}>
                 <Text style={styles.textoBotao}>Cadastrar</Text>
             </TouchableOpacity>
         </View>
