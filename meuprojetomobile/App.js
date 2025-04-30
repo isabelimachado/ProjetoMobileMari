@@ -2,6 +2,7 @@
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native'; //importando navigation container -> conter as telas da navegação 
 import Home from './screens/Home'
+import Register from './screens/Register'
 import Login from './screens/Login'
 import Feed from './screens/Feed'; //importando as telas
 import Counter from './screens/Counter'; //import default: importa td dentro de uma biblioteca/componente
@@ -77,8 +78,10 @@ export default function App() {
   return ( //vai retornar a navegação stack, primeiro o login com o componente e dps o hometabs que eh os bottoms
      <NavigationContainer> 
         <Stack.Navigator> 
-          <Stack.Screen options={{headerShown:false}} name='login' component={Login}/>
+          <Stack.Screen  options={{headerShown:false}} name='login' component={Login}/>
+          <Stack.Screen options={{headerShown:false}} name='Cadastro' component={Register}/>
           <Stack.Screen options={{headerShown:false}} name ='hometabs' component={hometabs}/>
+
         </Stack.Navigator> 
      </NavigationContainer> //stack. ... (navegação ou tela)
   );

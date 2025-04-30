@@ -1,13 +1,10 @@
-import { Text, View, StyleSheet, TextInput } from 'react-native';
-import { Button } from 'react-native-web';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 // import AntDesign from '@expo/vector-icons/AntDesign';
 
 function Login() {
     return (
         <View style={styles.animais}>
         <Text>Login</Text>
-            <TextInput style={styles.input} placeholder='none'></TextInput>
-            <TextInput style={styles.input} placeholder='none'></TextInput>
         </View>
     );
 }
@@ -17,29 +14,36 @@ export default function login({navigation}) {
         <View style={styles.container}>
             
             <Text style={styles.texto1}><b>Tela de login PetShop</b></Text>
-            <Text style={styles.texto2}>NOME</Text>
             
             <View>
+                <Text style={styles.texto2}>EMAIL</Text>
                 <TextInput
-                    placeholder=''
+                    placeholder='Email'
                     style={styles.input}
                 />
             </View>
-                <View style={styles.caixa}>
+
+            <View>
                 <Text style={styles.texto2}>SENHA</Text>
                 <TextInput
-                    placeholder=''
+                    placeholder='Senha'
                     style={styles.input}
-                />
-                </View>
+                    secureTextEntry={true}
 
-                <View style={styles.botao}>
-                <Button 
-                title='logar' 
-                color="#ff69b4"
-                onPress={() => navigation.navigate('hometabs')} 
                 />
-                </View>
+            </View>
+
+            <View style={styles.botao}>
+                <TouchableOpacity onPress={() => navigation.navigate('hometabs')} color="#ff69c4" >
+                <Text>logar</Text>
+                </TouchableOpacity>
+            </View>
+
+            <View style={styles.botao}>
+                <TouchableOpacity onPress={() => navigation.navigate('Cadastro')} color="#ff69c4" >
+                <Text>Cadastre-se</Text>
+                </TouchableOpacity>
+            </View>
 
         </View>
     );
@@ -50,50 +54,43 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#ffcbdb',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
     },
 
-
-    texto1: {
-        fontFamily: 'Arial Narrow',
-        textAlign: 'center',
+    titulo: {
         fontSize: 30,
-        top: 150,
-    },
-
-    botao: {
-        width:150,
-        height:150,
-        bottom:90,
-        left:130,
-
-    },
-
-    texto2: {
-        fontFamily: 'Arial Narrow',
+        fontWeight: 'bold',
+        marginBottom: 40,
+        color: '#333',
         textAlign: 'center',
-        fontSize: 30,
-        right: 130,
-        top: 300,
-    },
-
-    caixa:{
-        bottom:300
     },
 
     input: {
-        height: 40,
-        margin: 12,
+        width: '100%',
+        height: 50,
+        borderColor: '#ccc',
         borderWidth: 1,
-        borderRadius:15,
-        padding: 10,
+        borderRadius: 10,
+        paddingHorizontal: 15,
+        marginBottom: 20,
+        backgroundColor: '#fff',
+        fontSize: 16,
+    },
+
+    botao: {
+        backgroundColor: '#ff69b4',
+        paddingVertical: 15,
+        paddingHorizontal: 40,
+        borderRadius: 10,
+        marginTop: 10,
+    },
+
+    textoBotao: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 16,
         textAlign: 'center',
-        fontSize: 30,
-        marginTop: 300,
     },
-
-    seila: {
-        bottom: 300
-    },
-
-
 });
