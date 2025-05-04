@@ -44,7 +44,7 @@ export default function Counter(){
                 </TouchableOpacity>
             </View>
 
-            <View style={{alignItems:'center',backgroundColor: 'white',bottom:200}}>
+            <View style={{alignItems:'center',backgroundColor: 'white',bottom:210}}>
             <TextInput
                 placeholder='Nome'
                 style={styles.input}

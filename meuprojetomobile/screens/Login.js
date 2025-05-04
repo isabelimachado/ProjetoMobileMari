@@ -3,7 +3,6 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import {auth} from "../Controller";
 import { useState } from 'react';
 
-
 //precisa do navigation como propriedade
 export default function Login({navigation}) {
     const [email, setemail] = useState("");
@@ -47,13 +46,13 @@ export default function Login({navigation}) {
 
             <View style={styles.botao}>
                 <TouchableOpacity onPress={VerificarUser} color="#ff69c4" >
-                <Text>logar</Text>
+                <Text style={styles.textoBotao}>logar</Text>
                 </TouchableOpacity>
             </View>
 
             <View style={styles.botao}>
                 <TouchableOpacity onPress={() => navigation.navigate('Cadastro')} color="#ff69c4" >
-                <Text>Cadastre-se</Text>
+                <Text style={styles.textoBotao}>Cadastrar</Text>
                 </TouchableOpacity>
             </View>
 
@@ -71,17 +70,18 @@ const styles = StyleSheet.create({
         padding: 20,
     },
 
-    titulo: {
+    texto1: {
         fontSize: 30,
         fontWeight: 'bold',
         marginBottom: 40,
         color: '#333',
         textAlign: 'center',
+        fontFamily:"Arial Narrow"
     },
 
     input: {
         width: '100%',
-        height: 50,
+        height: 60,
         borderColor: '#ccc',
         borderWidth: 1,
         borderRadius: 10,
@@ -102,7 +102,11 @@ const styles = StyleSheet.create({
     textoBotao: {
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 16,
+        fontSize: 20,
         textAlign: 'center',
     },
+
+    texto2:{
+        fontSize:15,
+    }
 });
