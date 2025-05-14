@@ -22,14 +22,19 @@ export default function Cadastro({navigation}) {
     return (
         <View style={styles.container}>
             <Text style={styles.titulo}>Tela de Cadastro PetShop</Text>
-    
+
+            <View>
+            <Text style={styles.texto2}>EMAIL</Text>
             <TextInput
                 placeholder='Email'
                 style={styles.input}
                 value={email}
                 onChangeText={setemail}
             />
-    
+            </View>
+
+            <View>
+            <Text style={styles.texto2}>SENHA</Text>
             <TextInput
                 placeholder='Senha'
                 style={styles.input}
@@ -37,7 +42,8 @@ export default function Cadastro({navigation}) {
                 onChangeText={setSenha}
                 secureTextEntry={true}
             />
-    
+            </View>
+            
             <TouchableOpacity style={styles.botao} onPress={cadastroUser}>
                 <Text style={styles.textoBotao}>Cadastrar</Text>
             </TouchableOpacity>
@@ -65,6 +71,7 @@ const styles = StyleSheet.create({
         marginBottom: 40,
         color: '#333',
         textAlign: 'center',
+        fontFamily:"Arial Narrow"
     },
 
     input: {
@@ -90,7 +97,8 @@ const styles = StyleSheet.create({
     textoBotao: {
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 16,
+        fontSize: 25,
         textAlign: 'center',
+        fontFamily: "Arial Narrow"
     },
 });

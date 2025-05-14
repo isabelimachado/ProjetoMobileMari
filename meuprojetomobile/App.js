@@ -1,17 +1,29 @@
 
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native'; //importando navigation container -> conter as telas da navegação 
+
+//importando navigation container -> conter as telas da navegação 
+
+//IMPORTAR AS TELAS
 import Home from './screens/Home'
 import Register from './screens/Register'
 import Login from './screens/Login'
+import Carrinho from './screens/Carrinho';
 import Feed from './screens/Feed'; //importando as telas
 import Counter from './screens/Counter'; //import default: importa td dentro de uma biblioteca/componente
+import Produtos from './screens/Produtos';
+
+//----------ICONS
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'; //simbolos no bottom do site EXPO ICONS
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Entypo from '@expo/vector-icons/Entypo';
 
+
+//------------NAVEGAÇÕES
+import { NavigationContainer } from '@react-navigation/native'; 
 import { createStackNavigator  } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Produtos from './screens/Produtos';
+
+
 //importar as navegações stack e bottom
 function hometabs(){
   const Bottom = createBottomTabNavigator(); //criar uma função para conter todas as telas que vao aparecer dps do login
@@ -64,10 +76,19 @@ function hometabs(){
     <Bottom.Screen name='Produtos' component={Produtos}
     options={{
       tabBarIcon: () => (
-          <MaterialIcons name="production-quantity-limits" size={30} color= '#E486A2' />      
-        )
+        <Entypo name="shop" size={30} color= '#E486A2'/>        )
     }}
     />
+
+  
+    <Bottom.Screen name='Carrinho' component={Carrinho}
+        options={{
+          tabBarIcon: () => (
+            <MaterialIcons name="production-quantity-limits" size={30} color='#E486A2' />
+          )
+        }}
+      />
+    
   </Bottom.Navigator>
   )
 

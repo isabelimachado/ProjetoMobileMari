@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
 
     input: {
         width: '100%',
-        height: 60,
+        height: 50,
         borderColor: '#ccc',
         borderWidth: 1,
         borderRadius: 10,
@@ -102,8 +102,9 @@ const styles = StyleSheet.create({
     textoBotao: {
         color: '#fff',
         fontWeight: 'bold',
-        fontSize: 20,
+        fontSize: 25,
         textAlign: 'center',
+        fontFamily: "Arial Narrow"
     },
 
     texto2:{
