@@ -4,7 +4,7 @@ export default function Card({ nome, valor, img }) {
     return (
         <View style={styles.card}>
             <Image style={styles.imagem} source={{ uri: img }} />
-            <View>
+            <View style={styles.textContainer}>
                 <Text style={styles.texto}>{nome}</Text>
                 <Text style={styles.texto}>R$ {valor}</Text>
             </View>
@@ -14,7 +14,7 @@ export default function Card({ nome, valor, img }) {
 
 const styles = StyleSheet.create({
     card: {
-        flexDirection: "row",
+        flexDirection: "row",//texto e imagem lado a lado
         padding: 20,
         margin: 10,
         backgroundColor: "#ef6f82",
@@ -25,17 +25,20 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     imagem: {
-        height: 120,
-        width: 120,
+        height: 150,
+        width: 150,
         borderRadius: 10,
-        marginRight: 30,
+        marginRight: 20,
     },
-
+    textContainer: {
+        flexDirection: 'column', //deixa os textos na vertical
+        maxWidth: '60%',  
+    },
     texto: {
         fontFamily: 'Arial',
         fontSize: 25,
         color: "black",
-        right: 20,
-        flexWrap: 'wrap'
+        flexShrink: 1, //diminui o texto se precisar
+        marginBottom: 5, 
     },
 });

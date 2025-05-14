@@ -1,15 +1,26 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { View, Text, StyleSheet,FlatList,Image} from "react-native-web";
 import Card from '../components/Card'
-
+import { db } from "../Controller";
+import { collection,  doc,  getDocs } from "firebase/firestore";
 export default function Produtos(){
-    const [produto,setproduto] = useState([
-        {id:1, nome: 'Ração de gato filhote', valor: 50.99,img: 'https://down-br.img.susercontent.com/file/br-11134207-7qukw-lgcl63vzwxof58'},
-        {id:2, nome: 'Arranhador de gato', valor: 130.00,img: 'https://th.bing.com/th/id/OIP.xof0ct10wgjcgZ8-oZJglAHaF3?rs=1&pid=ImgDetMain'},
-        {id:3, nome: 'Rémedio de cachorro', valor: 25.00,img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDQv4sHF85JOrWz2NieYmIzKJDwgLWDDE6fg&s'},
-        {id:3, nome: 'Roupa de salsicha', valor: 90.99, img: 'https://fotos.amomeupet.org/uploads/fotos/1640183798_61c337f6689ae_hd.jpeg'}
+    const [produto,setproduto] = useState([]);
 
-    ])
+    useEffect(() => {
+        async function carrregarProduto() {
+        try {
+            const querySnapshot = await getDocs(collection (db,'produtos'));
+            const lista = [];
+            querySnapshot.forEach((doc)=>{
+                lista.push({id:doc.id, ...doc.data()});
+            });
+            setproduto(lista);
+        } catch (error) {
+            console.log("erro ao buscar produto:", error);
+        }
+    }
+    carrregarProduto();
+    }, []);
     
     return(
         <View style={styles.container}>
@@ -26,7 +37,7 @@ export default function Produtos(){
                     <Card
                         nome={item.nome}
                         valor={item.valor}
-                        img={item.img}
+                        img={item.imagem}
                     />
                 </View>
                 )}
