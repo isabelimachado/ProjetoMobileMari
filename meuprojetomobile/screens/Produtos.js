@@ -2,9 +2,11 @@ import { useState , useEffect} from "react";
 import { View, Text, StyleSheet,FlatList,Image} from "react-native-web";
 import Card from '../components/Card'
 import { db } from "../Controller";
+import {useCarrinho} from "../components/ProviderCart";
 import { collection,  doc,  getDocs } from "firebase/firestore";
-export default function Produtos(){
+export default function Produtos({navigation}){
     const [produto,setproduto] = useState([]);
+    const {adicionarProduto} = useCarrinho();
 
     useEffect(() => {
         async function carrregarProduto() {
@@ -38,6 +40,10 @@ export default function Produtos(){
                         nome={item.nome}
                         valor={item.valor}
                         img={item.imagem}
+                        comprar={() => {
+                            adicionarProduto(item);
+                            navigation.navigate('Carrinho');
+                        }} //componente que carrega algo pra outras telas -> contexto
                     />
                 </View>
                 )}
@@ -59,7 +65,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffcbdb',
         justifyContent: "center",
         textAlign: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        fontFamily: 'Arial Narrow',
 
     },
 

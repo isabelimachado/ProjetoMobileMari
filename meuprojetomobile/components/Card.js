@@ -1,12 +1,13 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Button } from "react-native";
 
-export default function Card({ nome, valor, img }) {
+export default function Card({ nome, valor, img,comprar }) {
     return (
         <View style={styles.card}>
             <Image style={styles.imagem} source={{ uri: img }} />
             <View style={styles.textContainer}>
                 <Text style={styles.texto}>{nome}</Text>
                 <Text style={styles.texto}>R$ {valor}</Text>
+                <Button title="Comprar" onPress={comprar} color={"black"}/> 
             </View>
         </View>
     );
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
         maxWidth: '60%',  
     },
     texto: {
-        fontFamily: 'Arial',
+        fontFamily: 'Arial Narrowtrttg',
         fontSize: 25,
         color: "black",
         flexShrink: 1, //diminui o texto se precisar

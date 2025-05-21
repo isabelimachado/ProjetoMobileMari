@@ -79,14 +79,14 @@ const styles = StyleSheet.create({
       flexDirection:"row",
       alignSelf: "center",
       gap: 30,
-      top:160
+      top:180
     },
   
     animais: {
       flexDirection:"row",
       alignSelf: "center",
       gap: 30,
-      top:130
+      top:90
     },
   
     image1: { 

@@ -1,6 +1,5 @@
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
 import { useState } from 'react';
-import { TextInput } from 'react-native-web'; 
 import { db } from '../Controller';
 import { collection, addDoc } from 'firebase/firestore';
 

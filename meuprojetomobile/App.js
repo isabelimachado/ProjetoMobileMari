@@ -11,6 +11,7 @@ import Cadastrar from './screens/Cadastrar';
 import Feed from './screens/Feed'; //importando as telas
 import Counter from './screens/Counter'; //import default: importa td dentro de uma biblioteca/componente
 import Produtos from './screens/Produtos';
+import Carrinho from './screens/Carrinho';
 
 //----------ICONS
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'; //simbolos no bottom do site EXPO ICONS
@@ -22,7 +23,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import { ProviderCart } from './components/ProviderCart';
 
 //importar as navegações stack e bottom
 function hometabs() {
@@ -32,7 +33,7 @@ function hometabs() {
 
     <Bottom.Navigator
       screenOptions={{
-        animation: 'fade',
+        animation: 'shift',
         bottomStyle: {
           headerTitleStyle: { fontWeight: 'bold', fontSize: 20 },
           backgroundColor: '#f0f0f0',
@@ -88,6 +89,13 @@ function hometabs() {
         }}
       />
 
+      <Bottom.Screen name='Carrinho' component={Carrinho}
+        options={{
+          tabBarIcon: () => (
+            <Entypo name="shopping-cart"  size={30} color='#E486A2' />)
+        }}
+      />
+
     </Bottom.Navigator>
   )
 
@@ -96,6 +104,7 @@ const Stack = createStackNavigator(); //criando a navegação Stack com  uma con
 
 export default function App() {
   return ( //vai retornar a navegação stack, primeiro o login com o componente e dps o hometabs que eh os bottoms
+   <ProviderCart>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen options={{ headerShown: false }} name='login' component={Login} />
@@ -103,8 +112,8 @@ export default function App() {
         <Stack.Screen options={{ headerShown: false }} name='hometabs' component={hometabs} />
 
       </Stack.Navigator>
-    </NavigationContainer> //stack. ... (navegação ou tela)
+    </NavigationContainer> 
+  </ProviderCart> 
   );
-
 }
 
