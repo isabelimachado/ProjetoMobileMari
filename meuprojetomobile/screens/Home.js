@@ -1,5 +1,5 @@
-import { Text, View, StyleSheet, Image,TextInput } from 'react-native'; 
-import { ImageBackground } from 'react-native-web';
+import { Text, View, StyleSheet, Image } from 'react-native'; 
+import { ImageBackground } from 'react-native';
 import imagemdefundo from '../assets/imagemdefundo.webp';
 
 function Animais() {
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
       fontFamily: 'Arial Narrow',
       textAlign: 'center',
       fontSize: 30,
-      top: 95,
+      top: 60,
       right:29,
       textAlign:'center'
     },

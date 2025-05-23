@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import { useCarrinho } from "../components/ProviderCart";
 
@@ -9,20 +8,24 @@ export default function Carrinho() {
         <View style={styles.container}>
             <Text style={styles.title}>TELA CARRINHO</Text>
 
-            <FlatList
-                showsVerticalScrollIndicator={false}
-                data={carrinho}
-                keyExtractor={(item, index) => index.toString()}
-                renderItem={({ item }) => (
-                    <View style={styles.card}>
-                        <Image style={styles.imagem} source={{ uri: item.imagem }} />
-                        <View style={styles.textos}>
-                            <Text style={styles.texto}>{item.nome}</Text>
-                            <Text style={styles.valor}>R$ {item.valor}</Text>
+            {carrinho.length === 0 ? ( //se o carrinho estiver vazio(0)... o texto -> ? - true
+                <Text style={styles.vazio}>Seu carrinho está vazio </Text>
+            ) : ( //o : faz o que acontece quando a condição não é satisfeita, seria nosso false
+                <FlatList
+                    showsVerticalScrollIndicator={false}
+                    data={carrinho}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => (
+                        <View style={styles.card}>
+                            <Image style={styles.imagem} source={{ uri: item.imagem }} />
+                            <View style={styles.textos}>
+                                <Text style={styles.texto}>{item.nome}</Text>
+                                <Text style={styles.valor}>R$ {item.valor}</Text>
+                            </View>
                         </View>
-                    </View>
-                )}
-            />
+                    )}
+                />
+            )}
         </View>
     );
 }
@@ -42,6 +45,14 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginBottom: 20,
         fontWeight: 'bold',
+    },
+
+    vazio: {
+        fontSize: 24,
+        fontFamily: 'Arial Narrow',
+        textAlign: 'center',
+        marginTop: 20,
+        color: '#555',
     },
 
     imagem: {
@@ -73,7 +84,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         width: '100%',
-
     },
 
     textos: {

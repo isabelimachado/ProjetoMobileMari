@@ -1,5 +1,5 @@
 import { useState , useEffect} from "react";
-import { View, Text, StyleSheet,FlatList,Image} from "react-native-web";
+import { View, Text, StyleSheet,FlatList} from "react-native";
 import Card from '../components/Card'
 import { db } from "../Controller";
 import {useCarrinho} from "../components/ProviderCart";

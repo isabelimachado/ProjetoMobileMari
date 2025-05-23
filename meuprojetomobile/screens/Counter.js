@@ -1,5 +1,4 @@
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'; //importando componentes nativos do react
-import {TextInput } from 'react-native-web'; //importando componentes nativos do react web
+import { Text, View, StyleSheet, TouchableOpacity,TextInput } from 'react-native'; //importando componentes nativos do react 
 import { useState } from 'react'; //usestate: valor inicial da variavel
 //importação nomeada: {} -> importando algo especifico da biblioteca
 
@@ -44,7 +43,7 @@ export default function Counter(){
                 </TouchableOpacity>
             </View>
 
-            <View style={{alignItems:'center',backgroundColor: 'white',bottom:300}}>
+            <View style={{alignItems:'center',backgroundColor: 'white',bottom:500}}>
             <TextInput
                 placeholder='Nome'
                 style={styles.input}
