@@ -7,9 +7,9 @@ export default function Card({ nome, valor, img, comprar }) {
       <View style={styles.container}>
         <Text style={styles.texto}>{nome}</Text>
         <Text style={styles.texto}>R$ {valor}</Text>
-        <View style={styles.botao}>
+        {comprar && <View style={styles.botao}>
           <Button title="Comprar" onPress={comprar} color="black" />
-        </View>
+        </View>}
       </View>
     </View>
   );
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ef6f82",
     borderRadius: 8,
     shadowColor: "#000",
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.5,
     shadowRadius: 5,
     alignItems: "center",
   },

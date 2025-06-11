@@ -4,6 +4,7 @@ import Card from '../components/Card'
 import { db } from "../Controller";
 import {useCarrinho} from "../components/ProviderCart";
 import { collection,  doc,  getDocs } from "firebase/firestore";
+
 export default function Produtos({navigation}){
     const [produto,setproduto] = useState([]);
     const {adicionarProduto} = useCarrinho();

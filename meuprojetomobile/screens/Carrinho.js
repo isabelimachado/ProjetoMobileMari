@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import { useCarrinho } from "../components/ProviderCart";
+import Card from "../components/Card";
 
 export default function Carrinho() {
     const { carrinho } = useCarrinho();
@@ -14,15 +15,13 @@ export default function Carrinho() {
                 <FlatList
                     showsVerticalScrollIndicator={false}
                     data={carrinho}
-                    keyExtractor={(item, index) => index.toString()}
                     renderItem={({ item }) => (
-                        <View style={styles.card}>
-                            <Image style={styles.imagem} source={{ uri: item.imagem }} />
-                            <View style={styles.textos}>
-                                <Text style={styles.texto}>{item.nome}</Text>
-                                <Text style={styles.valor}>R$ {item.valor}</Text>
-                            </View>
-                        </View>
+                    <Card
+                        nome={item.nome}
+                        valor={item.valor}
+                        img={item.imagem}
+
+                    />
                     )}
                 />
             )}
@@ -55,40 +54,4 @@ const styles = StyleSheet.create({
         color: '#555',
     },
 
-    imagem: {
-        height: 100,
-        width: 100,
-        borderRadius: 12,
-        marginRight: 15,
-    },
-
-    texto: {
-        fontFamily: 'Arial Narrow',
-        fontSize: 30,
-        color: "black",
-        marginBottom: 5,
-        flexWrap: 'wrap',
-    },
-
-    valor: {
-        fontFamily: 'Arial Narrow',
-        fontSize: 30,
-        color: "#555",
-    },
-
-    card: {
-        backgroundColor: "white",
-        padding: 15,
-        marginVertical: 8,
-        borderRadius: 15,
-        flexDirection: 'row',
-        alignItems: 'center',
-        width: '100%',
-    },
-
-    textos: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-    },
 });
