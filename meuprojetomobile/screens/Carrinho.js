@@ -2,8 +2,9 @@ import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import { useCarrinho } from "../components/ProviderCart";
 import Card from "../components/Card";
 
+
 export default function Carrinho() {
-    const { carrinho } = useCarrinho();
+    const { carrinho, removerProduto } = useCarrinho();
 
     return (
         <View style={styles.container}>
@@ -15,12 +16,12 @@ export default function Carrinho() {
                 <FlatList
                     showsVerticalScrollIndicator={false}
                     data={carrinho}
-                    renderItem={({ item }) => (
+                    renderItem={({ item, index}) => (
                     <Card
                         nome={item.nome}
                         valor={item.valor}
                         img={item.imagem}
-
+                        remover={() => removerProduto(index)}
                     />
                     )}
                 />

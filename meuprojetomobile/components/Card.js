@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Image, Button } from "react-native";
 
-export default function Card({ nome, valor, img, comprar }) {
+export default function Card({ nome, valor, img, comprar, remover }) {
   return (
     <View style={styles.card}>
       <Image style={styles.imagem} source={{ uri: img }} />
@@ -9,6 +9,9 @@ export default function Card({ nome, valor, img, comprar }) {
         <Text style={styles.texto}>R$ {valor}</Text>
         {comprar && <View style={styles.botao}>
           <Button title="Comprar" onPress={comprar} color="black" />
+        </View>}
+        {remover && <View style={styles.botao}>
+          <Button title="Remover" onPress={remover} color="black" />
         </View>}
       </View>
     </View>
@@ -46,7 +49,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   botao: {
-    width: "100%", 
+    width: "100%",
     marginTop: 10,
   },
 });

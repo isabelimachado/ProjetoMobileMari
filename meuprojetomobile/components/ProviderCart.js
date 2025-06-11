@@ -63,8 +63,21 @@ export function ProviderCart({ children }) {
             setCarrinho((anterior) => Array.isArray(anterior)? [...anterior,produto]:[produto])
     }
 
+    function removerProduto(index){
+        const novaLista = []
+
+        setCarrinho((estadoAnterior) => {
+            for(let i = 0; i < estadoAnterior.length; i++){
+                if (i !== index) {
+                    novaLista.push(estadoAnterior[i])
+                }
+            }
+        return novaLista;
+        })
+    }
+
     return (
-        <CarrinhoContext.Provider value={{ carrinho, adicionarProduto }}>
+        <CarrinhoContext.Provider value={{ carrinho, adicionarProduto, removerProduto }}>
             {children}
         </CarrinhoContext.Provider>
     )
